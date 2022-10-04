@@ -87,10 +87,10 @@ namespace BookDB.Controllers
             return Ok(book.Id);
         }
 
+
+        /*
         [HttpPut]
         [Route("{id:int}")]
-
-        // TODO: Delete since not in spec
         public async Task<IActionResult> UpdateBook([FromRoute] int id, UpdateBookRequest updateBookRequest)
         {
             var book = await dbContext.Books.FindAsync(id);
@@ -110,6 +110,7 @@ namespace BookDB.Controllers
 
             return Ok(book);
         }
+        */
 
         [HttpDelete]
         [Route("{id:int}")]
