@@ -69,17 +69,9 @@ namespace BookDB.Controllers
 
             var duplicateBook = await dbContext.Books.FirstOrDefaultAsync(b => b.Title == book.Title && b.Author == book.Author);
 
-            // Slightly dirty, could probably be done better.
             if (duplicateBook != null)
             {
-                if (book.Publisher == null)
-                {
-                    return BadRequest();
-                }
-                if (book.Publisher == duplicateBook.Publisher)
-                {
-                    return BadRequest();
-                }
+                return BadRequest();
             }
 
             await dbContext.Books.AddAsync(book);
